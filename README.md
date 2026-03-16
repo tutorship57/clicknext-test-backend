@@ -49,22 +49,32 @@ $ npm run start:prod
 ```bash
 users-endpoint
 
+# getUserProfile 
 GET api/users/me  - profile
 Authorization: Bearer <your_token>
 ```
 
+```bash
+accounts-endpoint
+
+# getAccountBalance of authorize account 
+GET api/accounts/:id 
+Authorization: Bearer <your_token>
+```
 
 ```bash
 authentication-endpoint
 
-POST api/auth/login - login
+# login
+POST api/auth/login 
 @body
 {
   email,
   password
 }
 
-POST api/auth/register -regiter
+#register
+POST api/auth/register
 @body
 {
   email,
@@ -75,9 +85,11 @@ POST api/auth/register -regiter
 ```bash
 transactions-endpoint
 
+# get all transactions of the authorize account 
 GET api/transactions/
 Authorization: Bearer <your_token>
 
+# create new transaction record 
 POST api/transactions/
 Authorization: Bearer <your_token>
 @body
@@ -87,6 +99,7 @@ Authorization: Bearer <your_token>
   accountId
 }
 
+#update transaction record 
 PATCH api/transactions/:id
 Authorization: Bearer <your_token>
 @body
@@ -94,6 +107,7 @@ Authorization: Bearer <your_token>
   amount,
 }
 
+#delete transaction record 
 DELETE api/transactions/:id
 Authorization: Bearer <your_token>
 
